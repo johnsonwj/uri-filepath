@@ -1,0 +1,41 @@
+name:                uri-filepath
+version:             0.1.0.0
+synopsis:            Conversions to and from RFC-8089 file URIs.
+#description:
+homepage:            https://github.com/johnsonwj/uri-filepath#readme
+license:             MIT
+author:              William Johnson
+maintainer:          '@johnsonwj'
+copyright:           2018 William Johnson
+category:            Network
+extra-source-files:
+  - README.md
+
+dependencies:
+  - base >= 4.7 && < 5
+  - filepath
+  - network-uri
+  - directory
+
+library:
+  source-dirs:
+    - ./src
+  exposed-modules:
+    - Network.URI.FilePath
+
+tests:
+  spec:
+    main: Spec.hs
+    other-modules:
+      - TestCases
+    source-dirs:
+      - ./tests
+    ghc-options: -main-is Spec
+    dependencies:
+      - uri-filepath
+      - hspec
+      - QuickCheck
+      - yaml
+      - unordered-containers
+      - bytestring
+      - raw-strings-qq
